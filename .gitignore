@@ -1,0 +1,11 @@
+# Extensions      #
+###################
+*.so
+*.cmake
+
+# Compiled source #
+###################
+CMakeCache.txt
+CMakeFiles
+Makefile
+Proj
