@@ -1,5 +1,3 @@
-from dateutil.parser import parser
-
 __author__ = 'velkerr'
 
 import random
@@ -8,8 +6,8 @@ import argparse as asp
 
 import repeating_count as rc
 
-MAX_LENGTH = 200
-MIN_LENGTH = 10;
+MAX_LENGTH = 250
+MIN_LENGTH = 10
 
 def string_generator():
     """
