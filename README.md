@@ -10,6 +10,7 @@ Task 1.4 from SHAD (second semester) used as C++ module.
 ### Установка на Linux
 1. Запустить rerun.sh.
 2. Запустить скрипт repeatings.py, предварительно изучив help к нему.
+
 ### Установка на Windows
 1. Настроить cmake (generator = Visual Studio 12 2013 *Win64*).
 2. Не работает :(
