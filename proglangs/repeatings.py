@@ -2,6 +2,7 @@ __author__ = 'velkerr'
 
 import random
 import string
+import time
 import argparse as asp
 
 import repeating_count as rc
@@ -40,10 +41,16 @@ def setup_parser():
 if __name__ == "__main__":
     args = setup_parser().parse_args()
 
+    start = time.process_time()
     strings = [string_generator() for _ in range(args.count)] if args.strings is None else args.strings[:args.count]
+    end = time.process_time()
+    print("\tRetrieving string TIME: {:.5f} sec".format(end - start))
 
+    start = time.process_time()
     if args.single:
         print('STRING= ', strings[0], '\nRESULT= ', rc.count_rep_single(strings[0]))
     else:
         results = rc.count_rep_list(strings)
         [print('\nSTRING= ', s, '\nRESULT= ', res) for s, res in zip(strings, results)]
+    end = time.process_time()
+    print("\tProcessing algorithm TIME: {:.5f} sec".format(end - start))
