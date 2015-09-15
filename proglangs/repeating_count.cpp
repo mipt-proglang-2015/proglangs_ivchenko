@@ -69,10 +69,8 @@ namespace repeating_count {
 PyObject* count_rep_single(PyObject *mod, PyObject *args){
     char* s;
     if(!PyArg_ParseTuple(args, "s", &s)){
-        Py_DECREF(s);
         return NULL;
     }
-    Py_DECREF(s);
     return Py_BuildValue("i", repeating_count::count(string(s)));
 }
 
@@ -88,20 +86,23 @@ PyObject* count_rep_list(PyObject *mod, PyObject *args){
         for (size_t i = 0; i < PyList_Size(inputList); ++i) {
             PyObject *list_item = PyList_GetItem(inputList, i);
             if (!PyArg_Parse(list_item, "s", &str)) {
-                Py_DECREF(str);
+                Py_XDECREF(list_item);
+                Py_XDECREF(inputList);
+                Py_XDECREF(outputList);
                 return NULL;
             }
+            Py_DECREF(list_item);
             PyList_Append(outputList, PyLong_FromSize_t(repeating_count::count(string(str))));
         }
     }
     else if(!PyArg_ParseTuple(args, "s", &str)){
-        Py_DECREF(str);
+        Py_XDECREF(inputList);
+        Py_XDECREF(outputList);
         return NULL;
     }
     else {
         PyList_Append(outputList, PyLong_FromSize_t(repeating_count::count(string(str))));
     }
-    Py_DECREF(str);
     return outputList;
 }
 
