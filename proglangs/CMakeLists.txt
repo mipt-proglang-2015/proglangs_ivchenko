@@ -1,4 +1,5 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.0)
+
 set(CMAKE_VERBOSE_MAKEFILES on) # Advanced commenting
 project(repeating_count)
 set(SOURCE_FILES repeating_count.cpp)

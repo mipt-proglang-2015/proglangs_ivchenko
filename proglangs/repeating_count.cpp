@@ -120,7 +120,3 @@ PyMODINIT_FUNC PyInit_repeating_count() {
     PyObject* module = PyModule_Create(&ModuleDef);
     return module;
 }
-
-int main(){
-    return 0;
-}
