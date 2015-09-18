@@ -7,8 +7,8 @@ import argparse as asp
 
 import repeating_count as rc
 
-MAX_LENGTH = 250
-MIN_LENGTH = 10
+MAX_LENGTH = 5000
+MIN_LENGTH = 20
 
 def string_generator():
     """
