@@ -91,11 +91,10 @@ PyObject* count_rep_list(PyObject *mod, PyObject *args){
                 Py_XDECREF(outputList);
                 return NULL;
             }
-            // Py_DECREF(list_item);
             PyList_Append(outputList, PyLong_FromSize_t(repeating_count::count(string(str))));
         }
     }
-    else if(!PyArg_Parse(inputList, "s", &str)){
+    else if(!PyArg_ParseTuple(inputList, "s", &str)){
         Py_XDECREF(inputList);
         Py_XDECREF(outputList);
         return NULL;
