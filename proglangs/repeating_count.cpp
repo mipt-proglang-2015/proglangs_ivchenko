@@ -102,6 +102,7 @@ PyObject* count_rep_list(PyObject *mod, PyObject *args){
     else {
         PyList_Append(outputList, PyLong_FromSize_t(repeating_count::count(string(str))));
     }
+    Py_INCREF(outputList);
     return outputList;
 }
 
